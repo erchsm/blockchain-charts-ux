@@ -9,13 +9,13 @@ var path = require('path');
 module.exports = {
     root: {
         src: path.join(__dirname, '../src'),
-        dest: path.join(__dirname, '../docs')
+        dest: path.join(__dirname, '../build')
     },
     watchableTasks: ['copyScripts', 'copyImg', 'copyFonts', 'ejs', 'scripts', 'styles', 'iconfont'],
     tasks: {
         browserSync: {
             server: {
-                baseDir: "./docs"
+                baseDir: "./build"
                 // middleware: [
                 // webpackDevMiddleware(bundler, {
                 //     publicPath: webpackConfig.output.publicPath,
