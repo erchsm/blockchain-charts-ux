@@ -1,0 +1,50 @@
+@keyframes placeHolderShimmer{
+    0%{
+        background-position: -468px 0
+    }
+    100%{
+        background-position: 468px 0
+    }
+}
+
+.loading-bar {
+	animation-duration: 1.2s;
+    animation-fill-mode: forwards;
+    animation-iteration-count: infinite;
+    animation-name: placeHolderShimmer;
+    animation-timing-function: linear;
+
+    background: #f6f7f8;
+    background: linear-gradient(to right, #eeeeee 8%, #dddddd 18%, #eeeeee 33%);
+    background-size: 800px 494px;
+
+    &--lg {
+    	width: 212px;
+	    height: 32px;
+	    margin-bottom: 32px;
+    }
+
+    &--md {
+    	width: 120px;
+	    height: 24px;
+	    margin-bottom: 18px;
+    }
+
+    &--sm {
+    	width: 240px;
+	    height: 12px;
+	    margin-bottom: 6px;
+    }
+
+    &--xs {
+    	width: 180px;
+	    height: 12px;
+	    margin-bottom: 0px;
+    }
+
+    @for $i from 1 through 4 {
+      &:nth-child(#{$i}) {
+        animation-delay: ($i * 0.09s);
+      }
+    }
+}
