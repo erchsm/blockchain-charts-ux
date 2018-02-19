@@ -36,3 +36,10 @@ span {
   letter-spacing: -0.006em;
   font-weight: 500;
 }
+
+@media screen and (max-width: $bp-small) {
+    h2 {
+      font-size: 32px;
+      letter-spacing: 0.006em;
+  }
+}

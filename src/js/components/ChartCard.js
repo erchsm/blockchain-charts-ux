@@ -40,16 +40,28 @@ export default class ChartCard extends Component {
 					},
 					chartOptions: {
 						animation: {
-							easing: 'easeInOutBack',
-							duration: 1200
+							easing: 'easeOutBack',
+							duration: 600
+						},
+						tooltips: {
+							caretPadding: 9,
+							caretSize: 6,
+							cornerRadius: 3,
+							bodySpacing: 12,
+							displayColors: false,
+							bodyFontSize: 15,
+							titleFontSize: 12,
+							titleFontStyle: 'normal',
+							titleFontColor: 'rgba(220,220,220,0.8)'
 						},
 						scales: {
 							yAxes: [{
 								ticks: {
-									fontColor: "rgba(95,95,95,0.5)",
-									fontStyle: "bold",
+									fontSize: 11,
+									fontColor: 'rgba(95,95,95,0.33)',
+									fontStyle: 'bold',
 									maxTicksLimit: 4,
-									padding: 12,
+									padding: 6,
 									callback: (value, index, values) => {
 										if (this.props.title == 'Bitcoins in Circulation') {
 											return Numeral(value).format('0.0a').toUpperCase()
@@ -58,18 +70,23 @@ export default class ChartCard extends Component {
 											return Numeral(value).format('$0.0a').toUpperCase()
 										}
 									}
-								}
-							}],
-							xAxes: [{
-								ticks: {
-									fontColor: "rgba(95,95,95,0.5)",
-									fontStyle: "bold",
-									maxTicksLimit: 8,
-									padding: 12,
 								},
 								gridLines: {
 									drawTicks: false,
 									display: false
+								}
+							}],
+							xAxes: [{
+								ticks: {
+									maxRotation: 0,
+									fontStyle: "bold",
+									fontSize: 11,
+									fontColor: "rgba(95,95,95,0.33)",
+									maxTicksLimit: 6,
+									padding: 12,
+									callback: (value, index, values) => {
+										return value.toUpperCase()
+									}
 								}
 							}]
 						}
@@ -78,7 +95,7 @@ export default class ChartCard extends Component {
 						labels: data.transformedValues[0],
 						datasets: [{
 							label: this.props.title,
-							lineTension: 0.1,
+							lineTension: 0.2,
 							borderColor: '#B2DEF4',
 							backgroundColor: 'rgba(178, 222, 244, .4)',
 							borderCapStyle: 'butt',
@@ -125,7 +142,7 @@ export default class ChartCard extends Component {
 		const months = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
 		const month = months[a.getMonth()];
 		const date = a.getDate();
-		const time = date + ' ' + month;
+		const time = month + ' ' + date;
 		return time;
 	}
 
@@ -134,7 +151,7 @@ export default class ChartCard extends Component {
 
 		const classnames = classNames({
 			'card': true,
-			'card--show': true
+			'card--lg': true
 		});	
 
 		return (
@@ -146,7 +163,7 @@ export default class ChartCard extends Component {
 					<p>{body}</p>
 				</div>
 			) : (
-				<LoadingCard/>
+				<LoadingCard large='true'/>
 			)}
 			</div>
 		)

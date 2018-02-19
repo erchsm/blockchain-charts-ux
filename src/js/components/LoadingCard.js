@@ -6,6 +6,7 @@ import classNames from "classnames";
 export default class LoadingCard extends Component {
 
 	static propTypes = {
+		large: PropTypes.bool
 	}
 
 	constructor() {
@@ -13,11 +14,12 @@ export default class LoadingCard extends Component {
 	}
 
 	render() {
-		const {} = this.props;	
+		const { large } = this.props;	
 
 		const classnames = classNames({
 			'card': true,
-			'card--loading': true
+			'card--loading': true,
+			'card--lg': large
 		});
 
 		return (
