@@ -4,7 +4,6 @@ import ReactCSSTransitionGroup from "react-addons-css-transition-group";
 import classNames from "classnames";
 
 import StatCard from "./StatCard";
-import LoadingCard from "./LoadingCard";
 
 export default class StatSlider extends Component {
 
@@ -15,26 +14,6 @@ export default class StatSlider extends Component {
 	constructor() {
 		super();
 
-		this.state = {
-			dataLoaded: false,
-			data: {}
-		};
-	}
-
-	componentDidMount = () => {
-		fetch('//api.blockchain.info/stats?cors=true')
-			.then(response => {
-				return response.json();
-			})
-			.then(data => {
-				this.setState({ 
-					dataLoaded : true,
-					data: data
-				});
-			})
-			.catch(error => {
-				console.error(error);
-			});
 	}
 
 	render() {
@@ -42,27 +21,16 @@ export default class StatSlider extends Component {
 
 		let cards;
 
-		this.state.dataLoaded ? (
-			cards = stats.map((item, index) =>
-				<div key={index}>
-					<StatCard
-					title={item.title}
-					type={item.type}
-					data={this.state.data[item.type]}
-					label={item.label}		
-					body={item.body}
-					/>
-				</div>
-			)
-		) : (
-			cards = stats.map((item, index) =>
-				<div key={index}>
-					<LoadingCard
-					/>
-				</div>
-			)
-		);
-		
+		cards = stats.map((item, index) =>
+			<div key={index}>
+				<StatCard
+				title={item.title}
+				endpoint={item.endpoint}
+				label={item.label}		
+				body={item.body}
+				/>
+			</div>
+		)		
 
 		const classnames = classNames({
 			'slider': true,
