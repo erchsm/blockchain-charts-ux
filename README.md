@@ -4,7 +4,7 @@ For Blockchain.com's UX Challenge I was tasked with creating a better user exper
 
 To create a better experience I used a chart library called [Chart.js](http://www.chartjs.org/) and created loading states for every chart. Additionally I created a reusable and flexible card slider component that would allow for the content to easily change. This component allowed for a better mobile experience and better use of page real estate.
 
-### Installing
+### Install & Run
 
 To run the app you'll need node and npm. Install whichever way you please, I use homebrew:
 
@@ -16,6 +16,18 @@ Then you will also need to install gulp:
 
 ```
 npm install -g gulp
+```
+
+After you have cloned the repo, install the rest of the packages from the directory:
+
+```
+npm install
+```
+
+Run the project with gulp:
+
+```
+gulp
 ```
 
 ### Built with
