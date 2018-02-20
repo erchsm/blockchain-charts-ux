@@ -13,5 +13,11 @@ section {
 	h2 {
 		padding: 40px 12px 0 48px;
 	}
+
+	@media screen and (max-width: $bp-medium) {
+		h2 {
+			padding: 24px 12px 0 40px;
+		}
+	}
 }
 
