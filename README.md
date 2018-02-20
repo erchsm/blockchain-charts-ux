@@ -30,5 +30,3 @@ npm install -g gulp
 
 * [gulp-iconfont](https://www.npmjs.com/package/gulp-iconfont) I started on some Iconography that would help make the Stat Cards more compelling using the SVG -> Icon Front gulp task.
 * More Chart.js finessing. I had an idea to make a slider UI for the chart Timespans so that the user could control how far back they are seeing in the chart.
-* More CSS for mobile.
-
