@@ -18,7 +18,7 @@ Then you will also need to install gulp:
 npm install -g gulp
 ```
 
-### Built With
+### Built with
 
 * [React](https://reactjs.org/) - The web framework used
 * [Gulp](https://gulpjs.com/) - Building and Serving
@@ -26,7 +26,7 @@ npm install -g gulp
 * [SASS/Autoprefixer](https://www.npmjs.com/package/gulp-autoprefixer) - CSS Preprocessor with automatic browser prefixing
 
 
-## How it could be better!
+### How it could be better!
 
 * [gulp-iconfont](https://www.npmjs.com/package/gulp-iconfont) I started on some Iconography that would help make the Stat Cards more compelling using the SVG -> Icon Front gulp task.
 * More Chart.js finessing. I had an idea to make a slider UI for the chart Timespans so that the user could control how far back they are seeing in the chart.
